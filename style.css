@@ -97,11 +97,11 @@ html {
     border-color: #1dbfaf;
 }
   
-.form-group.invalid>.form-control {
+.form-group.invalid > .form-control {
     border-color: #e23451;
 }
   
-.form-group.invalid>.form-message {
+.form-group.invalid > .form-message {
     color: #e23451;
 }
   
