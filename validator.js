@@ -84,10 +84,10 @@ function Validator(formSelected, options) {
             var rules = formRules[e.target.name];
             var errorMessage;
 
-            rules.find(function (rule) {
+            for (var rule of rules) {
                 errorMessage = rule(e.target.value);
-                return errorMessage;
-            });
+                if (errorMessage) break;
+            }
 
             // Nếu có lỗi thì thêm class 'invalid' với thông báo lỗi
             if (errorMessage) {
