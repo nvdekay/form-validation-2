@@ -1,8 +1,5 @@
-function Validator(formSelected, options) {
+function Validator(formSelected) {
 
-    if (!options) {
-        options = {};
-    }
 
     function getParent(element, selector) {
         while (element.parentElement) {
@@ -118,6 +115,10 @@ function Validator(formSelected, options) {
     // Xử lí hành vi submit form
     formElement.onsubmit = function (e) {
         e.preventDefault();
+
+        this
+
+
         var inputs = formElement.querySelectorAll('input[name][rules]');
         var isValid = true;
         for (var input of inputs) {
@@ -128,7 +129,7 @@ function Validator(formSelected, options) {
 
         // Khi không có lỗi thì submit form
         if (isValid) {
-            if (typeof options.onSubmit === 'function') {
+            if (typeof Validator.onSubmit === 'function') {
                 var enableInputs = formElement.querySelectorAll('[name]');
                 var formValues = Array.from(enableInputs).reduce(function (values, input) {
 
@@ -155,7 +156,7 @@ function Validator(formSelected, options) {
                     return values;
                 }, {});
 
-                options.onSubmit(formValues);
+                Validator.onSubmit(formValues);
             } else {
                 formElement.submit();
             }

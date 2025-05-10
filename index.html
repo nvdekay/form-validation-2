@@ -33,8 +33,8 @@
 
             <div class="form-group">
                 <label for="password" class="form-label">Mật khẩu</label>
-                <input id="password" rules="required|min:6|max:10" name="password" type="password" placeholder="Nhập mật khẩu"
-                    class="form-control" />
+                <input id="password" rules="required|min:6|max:10" name="password" type="password"
+                    placeholder="Nhập mật khẩu" class="form-control" />
                 <span class="form-message"></span>
             </div>
 
@@ -45,11 +45,7 @@
 </body>
 <script src="validator.js"></script>
 <script>
-    Validator('#register-form', {
-        onSubmit: function (data) {
-            console.log(data);
-        }
-    });
+    Validator('#register-form');
 </script>
 
 </html>
